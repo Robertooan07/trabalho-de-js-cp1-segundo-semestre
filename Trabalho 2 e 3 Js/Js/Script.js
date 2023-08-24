@@ -14,6 +14,7 @@ const AumentoSalarios = salarios.map(salary => {
 
         console.log(AumentoSalarios);
 
+
 //2 – Utilizando o array de resultado anterior, crie um novo array, usando o método filter(), contendo somente os salários superiores a 2500.
 
 const salariosCOmAumento = [1725, 1380, 3300, 920, 5500, 2300, 1495, 4950, 977.5, 2475];
@@ -21,6 +22,19 @@ const salariosCOmAumento = [1725, 1380, 3300, 920, 5500, 2300, 1495, 4950, 977.5
 const salariosFiltrados = salariosCOmAumento.filter(salario => salario > 2500);
 
 console.log(salariosFiltrados);
+
+
+//3 - agora utilizando o array de resultado do exercício anterior, usando o método reduce(), some os valores
+
+const salariosJáFiltrados = [3300, 5500, 4950];
+
+const somaSalarios = salariosJáFiltrados.reduce((acc,numero) => acc + numero);
+//tirar duvida com o professor sobre colocar o 0 no fim, pra mim não faz diferença
+
+console.log(somaSalarios);
+
+
+
 
 
 // exercicio 3 da apostila Revisão JS
