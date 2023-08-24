@@ -22,3 +22,47 @@ const salariosFiltrados = salariosCOmAumento.filter(salario => salario > 2500);
 
 console.log(salariosFiltrados);
 
+
+// exercicio 3 da apostila Revisão JS
+
+// Array que armazenará as tarefas 
+const tarefas = [];
+
+// Função para adicionar nova tarefa
+function addTarefa(descricao, autor, departamento, importancia) {
+  tarefas.push({
+    descricao,
+    autor,
+    departamento,
+    importancia
+  });
+}
+
+function removerTarefa(index) {
+  tarefas.splice(index, 1);
+}
+
+function addValor(index, valor) {
+  tarefas[index].valor = valor;
+} 
+
+// Add duração
+function addDuracao(index, duracao) {
+  tarefas[index].duracao = duracao;
+}
+
+// Função para obter lista por importância
+function porImportancia() {
+  return tarefas.map(tarefa => tarefa.descricao)
+                 .sort((a, b) => tarefas.importancia - b.importancia); 
+}
+
+// Exemplo de uso
+addTarefa("Criar relatório", "João", "TI", 1); 
+addTarefa("Preparar reunião", "Maria", "Administração", 2);
+
+// Adiciona campo valor
+addValor(0, 500); 
+
+// Exibe lista por importância
+console.log(porImportancia());
