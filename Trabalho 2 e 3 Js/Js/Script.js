@@ -20,5 +20,5 @@ const salariosCOmAumento = [1725, 1380, 3300, 920, 5500, 2300, 1495, 4950, 977.5
 
 const salariosFiltrados = salariosCOmAumento.filter(salario => salario > 2500);
 
-console.log(salariosfiltrados);
+console.log(salariosFiltrados);
 
