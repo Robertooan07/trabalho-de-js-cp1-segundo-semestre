@@ -43,13 +43,16 @@ console.log(`Soma dos salários superiores a 2500: ${somaSalarios}`);
 
 const paidTaskCheck = document.getElementById('paid-task');            //Verifica se a tarefa é paga ou não
 const timedTaskCheck = document.getElementById('timed-task');
-const addButton = document.getElementById('add-task-button');
+const addBotao = document.getElementById('add-task-button');
+
 const departmentInput = document.getElementById('task-department');    //Pega o Departamento
 const authorInput = document.getElementById('task-author');            //Pega o Autor
 const orderTasksButton = document.getElementById('order-tasks-button');
 const importanceList = document.getElementById('importance-list');
+
 const descriptionInput = document.getElementById('task-description');  //pega o valor digitado
 const taskTableBody = document.querySelector('#exercicio-3 tbody[tarefas]');
+
 const importanceInput = document.getElementById('task-importance');    //Pega a Importancia 
 
 
@@ -80,7 +83,7 @@ function addTask() {
 
 // Eventos 
 //as duas funsões a baixo irão add um evento diferente para cada botão, 1. add uma tarefa; 2. ordena as tarefas
-addButton.addEventListener('click', addTask);
+addBotao.addEventListener('click', addTask);
 orderTasksButton.addEventListener('click', orderTasksByImportance);
 
 
