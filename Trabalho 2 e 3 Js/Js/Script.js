@@ -40,21 +40,19 @@ console.log(`Soma dos salários superiores a 2500: ${somaSalarios}`);
 // exercicio 3 da apostila Revisão JS
 
 // Selecionar elementos
-const descriptionInput = document.getElementById('task-description');  //pega o valor digitado
-const authorInput = document.getElementById('task-author');            //Pega o Autor
-const departmentInput = document.getElementById('task-department');    //Pega o Departamento
-const importanceInput = document.getElementById('task-importance');    //Pega a Importancia 
+
 const paidTaskCheck = document.getElementById('paid-task');            //Verifica se a tarefa é paga ou não
 const timedTaskCheck = document.getElementById('timed-task');
 const addButton = document.getElementById('add-task-button');
+const departmentInput = document.getElementById('task-department');    //Pega o Departamento
+const authorInput = document.getElementById('task-author');            //Pega o Autor
 const orderTasksButton = document.getElementById('order-tasks-button');
 const importanceList = document.getElementById('importance-list');
+const descriptionInput = document.getElementById('task-description');  //pega o valor digitado
 const taskTableBody = document.querySelector('#exercicio-3 tbody[tarefas]');
+const importanceInput = document.getElementById('task-importance');    //Pega a Importancia 
 
-// Eventos 
-//as duas funsões a baixo irão add um evento diferente para cada botão, 1. add uma tarefa; 2. ordena as tarefas
-addButton.addEventListener('click', addTask);
-orderTasksButton.addEventListener('click', orderTasksByImportance);
+
 
 
 // Função para adicionar tarefa
@@ -80,6 +78,21 @@ function addTask() {
   taskTableBody.insertAdjacentHTML('beforeend', row); //pega o corpo da tabela e isere o html (linha no fim da tabela) e passa row com a nova linha
 }
 
+// Eventos 
+//as duas funsões a baixo irão add um evento diferente para cada botão, 1. add uma tarefa; 2. ordena as tarefas
+addButton.addEventListener('click', addTask);
+orderTasksButton.addEventListener('click', orderTasksByImportance);
+
+
+// Função para deletar tarefa
+// Depois de ter add uma nova linha no HTML, irá ter um botão ao lado para apagar aquela linha
+function deleteTask(taskId) {
+  const taskRow = document.getElementById(taskId);
+  if (taskRow) {
+    taskRow.remove();
+  }
+}
+
 // Função para criar linha da tabela
 // Recebe um objeto task, cria o HTML da linha com os dados, retorna essa string.
 function createTaskRow(task) {
@@ -98,14 +111,7 @@ function createTaskRow(task) {
   `; //a ultima linha tem a coluna com o botão de excluir aquela linha
 }
 
-// Função para deletar tarefa
-// Depois de ter add uma nova linha no HTML, irá ter um botão ao lado para apagar aquela linha
-function deleteTask(taskId) {
-  const taskRow = document.getElementById(taskId);
-  if (taskRow) {
-    taskRow.remove();
-  }
-}
+
 
 
 // Função para ordenar tarefas por importância
